@@ -1,2 +1,19 @@
-# nowcoder
-牛客编程题我使用PHP代码的方式实现，新手程序猿，可能在时间复杂度和空间复杂度上不是最优。
+# Hybrid Kit
+[![npm version](https://img.shields.io/npm/v/hybrid-kit.svg)](https://www.npmjs.org/package/hybrid-kit)
+
+a simple hybrid Kit
+
+## 安装
+```shell
+npm i hybrid-kit --save
+```
+
+## 使用
+```javascript
+import { requestHybrid, getHybridInfo } from 'hybrid-kit'
+```
+
+or  `dist/` 下 `hybrid.js` 和 `hybrid.min.js` 文件
+
+## 文档
+[点击这里](https://zhoutengfu.github.io/nowcoder)
