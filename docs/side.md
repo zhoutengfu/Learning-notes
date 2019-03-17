@@ -1,3 +1,4 @@
 - [七种排序算法](/sort/algorithm.md)
-- [Linux](/linux/lsyncd.md)
+- [Linux](/linux/index.md)
+    - [数据备份](/linux/lsyncd.md)
 - [牛客编程题](/coder/index.md)
