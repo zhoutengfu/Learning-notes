@@ -1,3 +1,3 @@
-- PHP
-   - [牛客编程题](/coder/index.md)
-   - [七种排序算法](/coder/algorithm.md)
+- [七种排序算法](/sort/algorithm.md)
+- [Linux](/linux/lsyncd.md)
+- [牛客编程题](/coder/index.md)
