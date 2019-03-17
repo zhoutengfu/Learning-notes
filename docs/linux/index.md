@@ -1,1 +1,1 @@
-[数据备份](/lsyncd.md)
+[数据备份]((/linux/lsyncd.md))
