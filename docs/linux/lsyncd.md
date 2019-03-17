@@ -12,16 +12,26 @@
  uid             = root
  gid             = root
  use chroot      = yes
+ #最大连接数量，0表示没有限制
  max connections = 10
+ #指定rsync的日志文件，而不把日志发送给syslog
  log file        = /var/log/rsyncd/rsyncd.log
+ #rsync daemon的pid文件
  pid file        = /var/run/rsyncd.pid
+ #指定锁文件 
  lock file       = /var/run/rsyncd.lock
-
- [test]
+###########下面指定模块，并设定模块配置参数，可以创建多个模块###########
+ [test] # 第一个模块的ID
+ # 第一个模块的ID
  path         = /data/test/
+ #只读
  read only    = no
+ #不隐藏该模板
  list         = yes
+ #这里使用的不是系统用户，而是虚拟用户。不设置时，默认所有用户都能连接，但使用的是匿名连接
  auth users   = {{userName}}
+ #保存auth users用户列表的用户名和密码，每行包含一个username:passwd。
+ #由于"strict modes"默认为true，所以此文件要求非rsync daemon用户不可读写。只有启用了auth users该选项才有效。
  secrets file = /etc/images.pas
  ```
     创建密码文件： `sudo vim /etc/images.pas`
@@ -29,6 +39,7 @@
 ```text
 {{userName}}:{{password}}
 ```
+    修改密码文件权限: `sudo chmod 600 /etc/images.pas`；
     启动服务: `/etc/init.d/rsync start`
 ## Client端安装
     安装lsyncd ：`apt-get install lsyncd`；
@@ -36,34 +47,48 @@
     
 ```text
 settings {
-     logfile      = "/var/log/lsyncd/lsyncd.log",
-     statusFile   = "/var/log/lsyncd/lsyncd.status",
-     inotifyMode  = "CloseWrite",
-     maxProcesses = 1000,
-     maxDelays    = 200,
+    -- 日志文件存放位置
+    logfile      = "/var/log/lsyncd/lsyncd.log",
+    -- 监控目录状态文件的存放位置
+    statusFile   = "/var/log/lsyncd/lsyncd.status",
+    -- 指定要监控的事件,如,CloseWrite,Modify,CloseWrite or Modify
+    inotifyMode  = "CloseWrite",
+    -- 指定同步时进程的最大个数
+    maxProcesses = 1000,
+    -- 当事件被命中累计多少次后才进行一次同步(即使间隔低于statusInterval)
+    maxDelays    = 200,
 }
 
 sync {
-     default.rsync,
-     source    = "/data/test/",
-     target    = "{{userName}}@210.36.158.XXX::test",
-     delay     = 100,
-  	 exclude   = "",
-     delete    = false,
-     rsync     = {
-         binary        = "/usr/bin/rsync",
-         password_file = "/etc/images.pas",
-         archive       = true,
-         compress      = true,
-         verbose       = true
+    -- lsyncd运行模式
+	-- default.direct=本地目录间同步
+	-- default.rsync=使用rsync
+	-- default.rsyncssh=使用rsync的ssh模式
+    default.rsync,
+    -- 同步的源目录
+    source    = "/data/test/",
+    -- 同步的目标目录
+    target    = "{{userName}}@210.36.158.XXX::test",
+    -- 等待rsync同步延时时间(秒)
+    delay     = 100,
+    exclude   = "",
+    -- 是否同步删除 true=同步删除 false=增量备份
+    delete    = false,
+    rsync     = {
+        binary        = "/usr/bin/rsync",
+        password_file = "/etc/images.pas",
+        archive       = true,
+        -- 压缩传输默认为true
+        compress      = true,
+        verbose       = true
     }
- }
+}
  ```
     创建文件夹: mkdir /var/log/lsyncd
- 
-    创建密码文件: `sudo vim /etc/images.pas`；
+    创建密码文件: `sudo vim /etc/images.pas`；  
     
 ```text
 {{password}} 
 ```
+    修改密码文件权限: `sudo chmod 600 /etc/images.pas`
     启动进程: `lsyncd -log Exec /etc/lsyncd.conf`
