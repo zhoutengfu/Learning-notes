@@ -2,5 +2,7 @@
     - [魔术方法](/php/magic.md)
 - [Linux](/linux/index.md)
     - [数据备份](/linux/lsyncd.md)
+
+- [redis](/redis/index.md)
 - [七种排序算法](/sort/algorithm.md)
 - [牛客编程题](/coder/index.md)

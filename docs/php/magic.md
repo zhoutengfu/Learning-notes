@@ -11,7 +11,6 @@ class BaseClass
     {
         echo "I am construct\n";
     }
-
 }
 
 $construct = new BaseClass();
@@ -68,7 +67,38 @@ new SubClass();
              I am sub construct             
 ```
 -----
+### 二、__destruct()，类的析构函数
+析构方法允许在销毁一个类之前执行的一些操作或完成一些功能，比如说关闭文件、释放结果集等。
 
+```PHP
+class destruct
+{
+    public function __destruct()
+    {
+        echo "我是destruct\n";
+    }
+}
 
-
+echo "1\n";
+$destruct = new destruct();
+echo "2\n";
+unset($destruct);
+echo "3\n";
+$destruct1 = new destruct();
+echo "4\n";
+$destruct2 = new destruct();
+echo "5\n";
+```
+results：
+<pre> 
+1
+2
+我是destruct
+3
+4
+5
+我是destruct
+我是destruct
+</pre>
+用户使用unset主动销毁对象或者系统自动释放变量都会触发destruct析构函数。
 
