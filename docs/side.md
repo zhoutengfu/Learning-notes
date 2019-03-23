@@ -1,4 +1,4 @@
-- [PHP](/php/index.md)
+- [PHP]
     - [魔术方法](/php/magic.md)
 - [Linux](/linux/index.md)
     - [数据备份](/linux/lsyncd.md)
