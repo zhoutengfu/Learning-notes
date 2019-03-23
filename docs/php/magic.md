@@ -92,7 +92,7 @@ $destruct2 = new destruct();
 echo "5\n";
 ```
 results：
-<pre> 
+```text
 1
 2
 我是destruct
@@ -101,7 +101,7 @@ results：
 5
 我是destruct
 我是destruct
-</pre>
+```
 用户使用unset主动销毁对象或者系统自动释放变量都会触发destruct析构函数。
 
 ****
@@ -129,7 +129,7 @@ class call
 $obj = new call();
 $obj->index();
 ```
-return
+results
 ```text
 index方法不存在
 ```
@@ -206,3 +206,4 @@ results：
 indexAction
 静态方法index1Action不存在
 ```
+----
