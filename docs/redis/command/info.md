@@ -168,7 +168,7 @@ db0:keys=598,expires=378,avg_ttl=1784064
 请注意根据redis版本一些字段已经删除和添加。因此，健壮的客户端应用程序应该通过跳过未知属性来解析该命令的结果，并优雅地处理丢失的字段。
 
 这是redis>=2.4字段描述
-这是server所有字段的意思
+#### server所有字段的意思
 
 * redis_version：redis版本
 * redis_git_sha1：Git SHA1
@@ -190,14 +190,14 @@ db0:keys=598,expires=378,avg_ttl=1784064
 * executable：服务脚本的路径
 * config_file:config文件路径
 
-clients部分全部字段意思
+#### clients部分全部字段意思
 
 * connected_client: client连接数量(不包含复制连接)
 * client_longest_output_list:当前client连接最大输出列表
 * client_biggest_input_bug:当前client连接中最小输出缓冲区
 * blocked_client:client等待阻塞访问client数量（BLPOP, BRPOP, BRPOPLPUSH）
 
-memory部分全部字段的意思
+#### memory部分全部字段的意思
 
 * used_memory:分配器分配给redis分配的内存（标准libc, jemalloc或者可替换的分配器如tcmalloc）
 * used_memory_human:人类可读的表达上面的值
@@ -221,15 +221,15 @@ memory部分全部字段的意思
 * active_defrag_running：指示活动碎片整理是否处于活动状态的标志
 * lazyfree_pending_objects：等待释放的对象（通过异步选项调用UNLINK或FLUSHDB和FLUSHALL的结果）
 
-理想情况used_memory_rss只稍微高于used_memory。当rss>>used意味着内存碎片。这个可以通过mem_fragmentation_ratio查看。当used >> rss, 这意味着Redis内存的一部分已经被操作系统交换了:预计会有一些明显的延迟。
+> 理想情况used_memory_rss只稍微高于used_memory。当rss>>used意味着内存碎片。这个可以通过mem_fragmentation_ratio查看。当used >> rss, 这意味着Redis内存的一部分已经被操作系统交换了:预计会有一些明显的延迟。
 
-因为Redis无法控制其分配如何映射到内存页面，所以高used_memory_rss通常是内存使用激增的结果。
+> 因为Redis无法控制其分配如何映射到内存页面，所以高used_memory_rss通常是内存使用激增的结果。
 
-当redis释放没存，内存归还给分配器。分配器可能也可能不讲内存归还给系统。所以可能used_memory值和操作系统显示的值存在矛盾。它可能由于使用的内存redis已经释放，但是没有返回给系统。used_memory_peak的值通常用于确认这一点。
+> 当redis释放没存，内存归还给分配器。分配器可能也可能不讲内存归还给系统。所以可能used_memory值和操作系统显示的值存在矛盾。它可能由于使用的内存redis已经释放，但是没有返回给系统。used_memory_peak的值通常用于确认这一点。
 
-通过参考MEMORY STATS命令和MEMORY DOCTOR，可以获得关于服务器内存的其他内省信息。
+> 通过参考MEMORY STATS命令和MEMORY DOCTOR，可以获得关于服务器内存的其他内省信息。
 
-持久化部分全部字段的意思
+#### 持久化部分全部字段的意思
 
 * loading：标志指示dump文件是否正在载入
 * rdb_changes_since_last_save：距离最近一次成功创建持久化文件之后，经过了多少秒
