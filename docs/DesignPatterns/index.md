@@ -1,0 +1,1 @@
+- [简单工厂](https://github.com/zhoutengfu/Learning-notes/tree/master/DesignPatterns/SimpleFactory)

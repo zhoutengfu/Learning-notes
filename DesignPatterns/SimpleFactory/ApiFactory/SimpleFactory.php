@@ -8,11 +8,12 @@
 
 namespace ApiFactory;
 
-include_once 'ImplA.php';
-include_once 'ImplB.php';
-
 class SimpleFactory
 {
+    /**
+     * @param string $string
+     * @return ImplA|ImplB
+     */
     public function create(string $string)
     {
         if ($string == 'A') {
