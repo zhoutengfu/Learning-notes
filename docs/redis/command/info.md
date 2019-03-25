@@ -334,10 +334,10 @@ db0:keys=598,expires=378,avg_ttl=1784064
 
 #### cpu部分字段的意思
 
-used_cpu_sys:redis服务消耗系统CPU
-used_cpu_user:redis服务消耗的用户CPU
-used_cpu_sys_children:后台进程消耗系统CPU
-used_cpu_user_children:后台进程消耗用户CPU
+* used_cpu_sys:redis服务消耗系统CPU
+* used_cpu_user:redis服务消耗的用户CPU
+* used_cpu_sys_children:后台进程消耗系统CPU
+* used_cpu_user_children:后台进程消耗用户CPU
 
 #### 基于命令类型commandstats部分提供统计，包含访问数量，这些命令总共消耗CPU时间和命令执行平均消耗时间。为每个命令类型添加下列字段
 
