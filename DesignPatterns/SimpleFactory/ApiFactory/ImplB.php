@@ -7,7 +7,6 @@
  */
 namespace ApiFactory;
 
-include_once 'Api.php';
 class ImplB implements Api
 {
     public function operation(string $string)

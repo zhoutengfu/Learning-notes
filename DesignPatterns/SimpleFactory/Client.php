@@ -8,20 +8,19 @@
 
 use \ApiFactory\SimpleFactory;
 
-
-include_once 'ApiFactory/SimpleFactory.php';
-class Client
+function __autoload($className)
 {
-    public function main()
-    {
-        $obj = new SimpleFactory();
-        $ImplA = $obj->create('A');
-        $ImplA->operation('我是A啊');
-
-        $ImplB = $obj->create('B');
-        $ImplB->operation('我是A啊');
+    if (file_exists('./' . str_replace('\\', '/', $className) . '.php')) {
+        require_once './' . str_replace('\\', '/', $className) . '.php';
+        return true;
     }
+    return false;
 }
 
-$client = new Client();
-$client->main();
+$obj = new SimpleFactory();
+$ImplA = $obj->create('A');
+$ImplA->operation('我是A啊');
+
+$ImplB = $obj->create('B');
+$ImplB->operation('我是B啊');
+
