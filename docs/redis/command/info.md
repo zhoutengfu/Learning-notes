@@ -303,11 +303,55 @@ db0:keys=598,expires=378,avg_ttl=1784064
 #### 如果是从服务实例，添加下列字段提供：
 
 * master_host:master宿主机的IP地址
-* 
+* master_port:tcp监听的端口
+* master_link_status:连接状态（上/下）
+* master_last_io_seconds_ago:自上次以来交互的秒数
+* master_sync_in_progress:指示主正在同步辅助
+* slave_repl_offset:复制的实例复制的偏移量
+* slave_priority:实例作为故障转移候选的优先级
+* slave_read_only:指示副本是否为只读的标志
 
+#### 如果SYNC操作正在执行。添加下列字段
 
+* master_sync_left_bytes:同步完成前剩余字节数
+* master_sync_last_io_seconds_ago:自上次同步操作传输I/O期间的秒数
 
+#### 如果主服务和从服务链接断开,添加下列字段
 
+* master_link_down_since_seconds:自上次链接断掉的秒数
+
+#### 始终提供以下字段
+
+* connected_slaves:链接的副本数量
+
+#### 如果服务配置min-slaves-to-write（或者从redis5 min-replicas-to-write）指令，添加下列字段
+
+* min_slaves_good_slaves：当前副本良好的数量
+
+#### 对于每个副本添加下列字段
+
+* slave***:id, IP address, port, state, offset, lag
+
+#### cpu部分字段的意思
+
+used_cpu_sys:redis服务消耗系统CPU
+used_cpu_user:redis服务消耗的用户CPU
+used_cpu_sys_children:后台进程消耗系统CPU
+used_cpu_user_children:后台进程消耗用户CPU
+
+#### 基于命令类型commandstats部分提供统计，包含访问数量，这些命令总共消耗CPU时间和命令执行平均消耗时间。为每个命令类型添加下列字段
+
+* cmdstat_XXX:calls=xxx,usec_per_call=XXX
+
+#### 集群部分当前仅包含唯一字段
+
+* cluster_enabled:指示redis集群是否开启
+
+####  keyspace部分提供了每个数据库主词典的统计信息。统计数据是key的数量和过期key的数量。为每个库添添加一下行
+
+* dbXXX:keys=XXX,expires:XXX
+
+#### 关于此手册页中使用的“slave”一词,从redis5开始，如果不为了向后兼容，redis项目不再使用slave一词。不幸的是，在这个命令中，从这个词是协议的一部分，因此，只有当这个应用程序接口自然不推荐使用时，我们才能删除这样的事件。
 
 
 

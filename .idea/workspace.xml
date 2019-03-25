@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de4c6ce1-fb82-4ba5-b07e-3c1cb05481ed" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/redis/command/info.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/redis/command/info.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,8 +17,8 @@
         <entry file="file://$PROJECT_DIR$/docs/redis/command/info.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="499">
-                <caret line="300" column="23" selection-start-line="300" selection-start-column="23" selection-end-line="300" selection-end-column="23" />
+              <first_editor relative-caret-position="628">
+                <caret line="353" column="40" selection-start-line="353" selection-start-column="40" selection-end-line="353" selection-end-column="40" />
               </first_editor>
               <second_editor />
             </state>
@@ -49,11 +50,11 @@
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="-91" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="711" />
     <option name="y" value="-1057" />
-    <option name="width" value="1713" />
-    <option name="height" value="877" />
+    <option name="width" value="1037" />
+    <option name="height" value="1057" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -173,18 +174,19 @@
       <workItem from="1553095722774" duration="1576000" />
       <workItem from="1553175554676" duration="5630000" />
       <workItem from="1553315756528" duration="15055000" />
-      <workItem from="1553410813469" duration="5820000" />
+      <workItem from="1553410813469" duration="6036000" />
+      <workItem from="1553516141422" duration="2492000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55256000" />
+    <option name="totallyTimeSpent" value="57964000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="643" y="-1080" width="1105" height="1080" extended-state="0" />
+    <frame x="711" y="-1057" width="1037" height="1057" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.050738007" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.02952756" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -345,8 +347,8 @@
     <entry file="file://$PROJECT_DIR$/docs/redis/command/info.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="499">
-            <caret line="300" column="23" selection-start-line="300" selection-start-column="23" selection-end-line="300" selection-end-column="23" />
+          <first_editor relative-caret-position="628">
+            <caret line="353" column="40" selection-start-line="353" selection-start-column="40" selection-end-line="353" selection-end-column="40" />
           </first_editor>
           <second_editor />
         </state>
