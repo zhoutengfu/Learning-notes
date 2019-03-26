@@ -12,9 +12,9 @@ class SimpleFactory
 {
     /**
      * @param string $string
-     * @return ImplA|ImplB
+     * @return Api
      */
-    public function create(string $string)
+    public function create(string $string): Api
     {
         if ($string == 'A') {
             return new ImplA();
