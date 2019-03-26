@@ -5,5 +5,6 @@
 - [设计模式](/DesignPatterns/index.md)
 - [redis](/redis/index.md)
     - [command-info](/redis/command/info.md)
+    - [command-append](/redis/command/append.md)
 - [七种排序算法](/sort/algorithm.md)
 - [牛客编程题](/coder/index.md)
