@@ -9,3 +9,4 @@
     - [command-info](/redis/command/info.md)
     - [command-append](/redis/command/append.md)
     - [command-auth](/redis/command/authPassword.md)
+    - [command-auth](/redis/command/bgrewriteaof.md)
