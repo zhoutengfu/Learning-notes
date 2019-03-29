@@ -1,5 +1,6 @@
 - [PHP](/php/index.md)
     - [魔术方法](/php/magic.md)
+    - [闭包](/php/bindTo.md)
 - [Linux](/linux/index.md)
     - [数据备份](/linux/lsyncd.md)
 - [设计模式](/DesignPatterns/index.md)
