@@ -12,4 +12,5 @@
     - [command-auth](/redis/command/authPassword.md)
     - [command-bgrewriteaof](/redis/command/bgrewriteaof.md)
     - [command-bgsave](/redis/command/bgsave.md)
+    - [command-BITCOUNT](/redis/command/bitcount.md)
     
