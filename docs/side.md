@@ -2,6 +2,7 @@
     - [魔术方法](/php/magic.md)
     - [闭包](/php/bindTo.md)
     - [第一个package](/php/firstPackage.md)
+    - [LNMP优化](/php/LNMP优化.md)
 - [Linux](/linux/index.md)
     - [数据备份](/linux/lsyncd.md)
 - [设计模式](/DesignPatterns/index.md)
