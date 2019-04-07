@@ -4,6 +4,7 @@
     - [第一个package](/php/firstPackage.md)
     - [LNMP优化](/php/LNMP优化.md)
     - [自定义session存储](/php/session.md)
+    - [outputBuffer](/php/outputBuffer.md)
 - [Linux](/linux/index.md)
     - [数据备份](/linux/lsyncd.md)
 - [设计模式](/DesignPatterns/index.md)
